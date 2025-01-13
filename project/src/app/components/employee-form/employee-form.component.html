@@ -1,0 +1,46 @@
+<div class="employee-form">
+  <h2>{{isEditMode ? 'Edit' : 'Add'}} Employee</h2>
+  
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Position</mat-label>
+      <input matInput formControlName="position">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Salary</mat-label>
+      <input matInput formControlName="salary" type="number">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Department</mat-label>
+      <mat-select formControlName="departmentId">
+        <mat-option *ngFor="let dept of departments" [value]="dept.id">
+          {{dept.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="form-actions">
+      <button mat-button routerLink="/employees">Cancel</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!employeeForm.valid">
+        {{isEditMode ? 'Update' : 'Create'}}
+      </button>
+    </div>
+  </form>
+</div>

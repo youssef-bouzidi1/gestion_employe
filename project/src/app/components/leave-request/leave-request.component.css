@@ -1,0 +1,32 @@
+.leave-request {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.form-section {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.list-section {
+  background: white;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+mat-table {
+  width: 100%;
+}
+
+.mat-column-actions {
+  width: 100px;
+}
